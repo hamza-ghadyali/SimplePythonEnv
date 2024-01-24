@@ -2,14 +2,6 @@
     "name": "Python Container",
     "dockerFile": "../Dockerfile",
 
-    "mounts": [
-        {
-            "type": "bind",
-            "source": "/Users/haghad/Documents/Projects/Exp_02/PythonEnv/MyCode/",
-            "target": "/MyWorkspace/"
-        }
-    ],
-
     "remoteUser": "root",
     "customizations": {
         "vscode": {
