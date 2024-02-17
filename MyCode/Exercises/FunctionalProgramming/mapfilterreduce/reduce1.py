@@ -14,4 +14,10 @@ def mul(x,y):
 r = reduce(mul, range(1,10))
 
 print(r)
+# shows how first variable stores accumulated value 
+# which is multiplied by the second variable
+
+
+# reduce repeatedly applies a two-argument callable
+# to accumulate the elements in an iterable
 

@@ -8,5 +8,6 @@ def outer(p='param'):
     print(id(l))
     inner()
 
-
+if __name__ == "__main__":
+    outer()
 
