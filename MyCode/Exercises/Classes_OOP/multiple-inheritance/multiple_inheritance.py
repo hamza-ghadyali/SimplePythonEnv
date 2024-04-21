@@ -32,7 +32,12 @@ class SortedList(SimpleList):
 class IntList(SimpleList):
     def __init__(self, items=()):
         for x in items: self._validate(x)
-        super().__init__(items)
+        #super().__init__(items)
+        s = super()
+        print(s)
+        print(type(s))
+        s.__init__(items)
+        print(s.__init__)
 
     @staticmethod
     def _validate(x):
@@ -43,10 +48,33 @@ class IntList(SimpleList):
         self._validate(item)
         super().add(item)
 
+class SortedIntList(IntList, SortedList):
+    pass
+
+
+
 if __name__ == "__main__":
-    sl = SortedList([4,3,78,1])
-    print(sl)
-    print(len(sl))
-    sl.add(-42)
-    print(sl)
+    sil = SortedIntList([46,78,12]) # set a breakpoint here and step-into
+    # when there is no __init__ in SortedList
+    # only the first base-class __init__ is automatically called
+    # but here IntList.__init__ calls super().__init__ which 
+    # actually goes to SortedList.__init__ before going up to SimpleList.__init__
+
+    sil.add(23) # set a breakpoint here and step-into
+    # step-into results:
+    # first goes to IntList.add, then from super().add goes on 
+    # to SortedList.add, then SimpleList.add, 
+    # then returns to super().add in Intlist before finishing up.
+    
+    mro = SortedIntList.__mro__
+    print(mro)
+    print(type(mro))
+    
+    #sil.add(5.7)
+
+    # WARNING: Using arguments with super can be tricky!
+    s = SortedIntList([])
+    super(IntList, s).add("Not an integer bypassing Intlist.add validation!")
+    print(s)
+    
 
