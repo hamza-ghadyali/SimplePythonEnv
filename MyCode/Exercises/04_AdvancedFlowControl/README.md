@@ -51,6 +51,15 @@ dispatching-on-type:
     most examples here were showing poor implementations that are fragile to refactoring
     some examples here are showing a preferred approach
 
+final section: see short-circuit-evaluation-slides.pdf
+    coalescing nulls - interesting concept! see slide 10
+
+    see search-demo:
+        search_050.py and search_060.py
+        simple but effective examples, see notes contained in script
+
+
+    
 
 
     
