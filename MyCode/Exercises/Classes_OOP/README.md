@@ -28,10 +28,10 @@ class-decorators
 data-classes:
     clip-04/inv-demo/location_400.py:
         recommend using @dataclass(frozen=True) 
-        # frozen enables immutability which should be preferred as best practice
-        # frozen=true with eq=True allows hashing
-        # hashing allows using dataclass instances in a set
-        # __post_init__ for validating attribute arguments (inputs) upon construction
+         frozen enables immutability which should be preferred as best practice
+         frozen=true with eq=True allows hashing
+         hashing allows using dataclass instances in a set
+         __post_init__ for validating attribute arguments (inputs) upon construction
 
 
     type-annotated class attributes specify the data class members
